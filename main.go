@@ -22,7 +22,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// lastb := b[len(b)-1]
 	lb := len(b)
 
 	nlchars := 0
@@ -34,7 +33,17 @@ func main() {
 		}
 	}
 
-	str := string(b[:lb-nlchars])
+	out := b[:lb-nlchars]
 
-	fmt.Printf(str)
+	ioutil.WriteFile(fn, out, 0644)
+
+	// str := string(out)
+
+	// fmt.Printf(str)
+
+	if nlchars > 0 {
+		fmt.Println("Newlines encountered.")
+
+		os.Exit(1)
+	}
 }
