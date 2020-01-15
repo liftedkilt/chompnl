@@ -1,0 +1,6 @@
+-   id: chompnl
+    name: Remove final newlines
+    description: This hook trims all final newlines
+    entry: chompnl
+    language: golang
+    types: [text]
