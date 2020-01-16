@@ -29,7 +29,7 @@ func main() {
 	}
 
 	if len(os.Args) > 2 && filesChanged > 0 {
-		log.Println("Removed newlines from " + strconv.Itoa(filesChanged) + " files.")
+		log.Println("Removed newlines from " + strconv.Itoa(filesChanged) + " of " + strconv.Itoa(len(os.Args)-1) + " files.")
 	}
 }
 
