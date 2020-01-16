@@ -24,12 +24,12 @@ func main() {
 
 		if nlchars > 0 {
 			filesChanged++
-			log.Println(fn + ": Removed " + strconv.Itoa(nlchars) + " newline(s).")
+			fmt.Println(fn + ": Removed " + strconv.Itoa(nlchars) + " newline(s).")
 		}
 	}
 
-	if filesChanged > 0 {
-		log.Fatalln("Removed newlines from " + strconv.Itoa(filesChanged) + " files.")
+	if len(os.Args) > 2 && filesChanged > 0 {
+		log.Println("Removed newlines from " + strconv.Itoa(filesChanged) + " files.")
 	}
 }
 
