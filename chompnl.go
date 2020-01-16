@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -37,13 +38,7 @@ func main() {
 
 	ioutil.WriteFile(fn, out, 0644)
 
-	// str := string(out)
-
-	// fmt.Printf(str)
-
 	if nlchars > 0 {
-		fmt.Println("Newlines encountered.")
-
-		os.Exit(1)
+		log.Fatalln(fn + ": Removed " + strconv.Itoa(nlchars) + " newline(s).")
 	}
 }
